@@ -1,4 +1,4 @@
-package com.bookmanagementapi.model;
+package com.bookmanagementapi.books;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;

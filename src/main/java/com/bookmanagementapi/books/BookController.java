@@ -1,7 +1,5 @@
-package com.bookmanagementapi.controller;
+package com.bookmanagementapi.books;
 
-import com.bookmanagementapi.model.Book;
-import com.bookmanagementapi.service.BookService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
