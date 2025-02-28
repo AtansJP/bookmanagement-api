@@ -1,40 +1,28 @@
-package com.bookmanagementapi.model;
+package com.bookmanagementapi.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.Instant;
-import java.util.UUID;
 
-@Entity
-@Table(name = "books")
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class BookRequest {
 
+    @NotBlank(message = "Title is required")
     private String title;
+
+    @NotBlank(message = "Author is required")
     private String author;
+
+    @NotBlank(message = "ISBN is required")
     private String isbn;
+
+    @NotNull(message = "Price is required")
+    @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than 0")
     private BigDecimal price;
+
+    @NotNull(message = "Publication date is required")
     private Instant publicationDate;
 
-    // Constructors
-    public Book() {
-    }
-
-    public Book(String title, String author, String isbn, BigDecimal price, Instant publicationDate) {
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.price = price;
-        this.publicationDate = publicationDate;
-    }
-
     // Getters and Setters
-    public UUID getId() {
-        return id;
-    }
-
     public String getTitle() {
         return title;
     }

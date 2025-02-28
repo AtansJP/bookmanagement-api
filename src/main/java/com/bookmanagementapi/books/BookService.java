@@ -1,7 +1,5 @@
-package com.bookmanagementapi.service;
+package com.bookmanagementapi.books;
 
-import com.bookmanagementapi.model.Book;
-import com.bookmanagementapi.repository.BookRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
